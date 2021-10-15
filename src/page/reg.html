@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册</title>
+    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
+    <script src="../lib/jquery-3.1.1.js"></script>
+    <script src="../lib/common.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>注册</h1>
+
+        <div class="form-item mb-3">
+            <label for="username form-label">用户名</label>
+            <input type="text" id="username" class="form-control ">
+            <div id="validationServerUsernameFeedback" class="invalid-feedback">
+                用户名已存在！
+            </div>
+        </div>
+
+        <div class="form-item mb-3">
+            <label for="password  form-label">密码</label>
+            <input type="password" id="password" class="form-control">
+        </div>
+
+        <div class="form-item mt-3">
+            <button class="btnSubmit btn btn-primary btn-lg">注册</button>
+            <span>已有账号？直接<a href="login.html">登录</a></span>
+        </div>
+    </div>
+    <script>
+        jQuery($ => {
+            const $username = $('#username')
+            const $password = $('#password')
+            const $btnSubmit = $('.btnSubmit')
+
+            let isVelid=true;
+            $username.on('change', function () {
+
+                $.ajax({
+                    url: '/reg/check',
+                    data: {
+                        username: $username.val()
+                    }
+                }).then(res => {
+                    // console.log(res);
+                    if (res.code === 400) {
+                        // alert('用户名已存在')
+                        $username.addClass('is-invalid')
+                        isVelid=false
+                        
+                    } else {
+                        // alert('可注册')
+                        $username.removeClass('is-invalid')
+                        $username.addClass('is-valid')
+                        isVelid=true
+                    }
+
+                })
+            })
+            
+            $btnSubmit.on('click',function(){
+                if(!isVelid){
+                    return
+                }
+                $.ajax({
+                    type:'post',
+                    // method:'post',
+                    url:'/reg',
+                    data:{
+                        username:$username.val(),
+                        password:$password.val()
+                    }
+                }).then(res=>{
+                    console.log(res);
+
+                })
+
+            })
+        })
+
+    </script>
+</body>
+
+</html>
