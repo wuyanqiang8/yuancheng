@@ -20,5 +20,11 @@
     "gulp-uglify": "^3.0.2",
     "mysql": "^2.18.1",
     "sass": "^1.43.2"
+  },
+  "devDependencies": {
+    "cheerio": "^1.0.0-rc.10",
+    "express": "^4.17.1",
+    "http-proxy-middleware": "^2.0.1",
+    "superagent": "^6.1.0"
   }
 }
