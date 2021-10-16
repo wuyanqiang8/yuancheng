@@ -24,10 +24,13 @@ const pool = mysql.createPool({
 
 // 有接口网址
 // https://v.juhe.cn/jztk/query?subject=4&model=c1&key=f3b906b6cd0ea2b924d90ad26b7a56ca&testType=order
+// https://v.juhe.cn/jztk/query?subject=1&model=c1&key=f3b906b6cd0ea2b924d90ad26b7a56ca&testType=order
 
 superagent.get('https://v.juhe.cn/jztk/query')
+    // ?subject=1&model=c1&key=f3b906b6cd0ea2b924d90ad26b7a56ca&testType=order
     .query({
-        subject: '4',
+        subject: '1',
+        model: 'a2',
         key: 'f3b906b6cd0ea2b924d90ad26b7a56ca',
         testType: 'order'
     })
@@ -41,24 +44,25 @@ superagent.get('https://v.juhe.cn/jztk/query')
             result
         } = res.body;
 
-        // 遍历这个数组
-        result.forEach(element => {
-            
-            
-        // 数组里的每个对象张这样
-        // {
-        //     id: '98',
-        //     question: '驾驶机动车在这种情况下不能超车。',
-        //     answer: '1',
-        //     item1: '正确',
-        //     item2: '错误',
-        //     item3: '',
-        //     item4: '',
-        //     explains: '有图可猜测前方是铁路道口，而根据《中华人民共和国道路交通安全法实施条例》规定，在铁路道口是不能超车的，因 此本题正确。',
-        //     url: 'http://images.juheapi.com/jztk/subject4/98.jpg'
-        //   },
+        // console.log('result',result);
 
-        // 获取每个对象里的值
+        // // 遍历这个数组
+        result.forEach(element => {
+
+            // 数组里的每个对象张这样
+            // {
+            //     id: '98',
+            //     question: '驾驶机动车在这种情况下不能超车。',
+            //     answer: '1',
+            //     item1: '正确',
+            //     item2: '错误',
+            //     item3: '',
+            //     item4: '',
+            //     explains: '有图可猜测前方是铁路道口，而根据《中华人民共和国道路交通安全法实施条例》规定，在铁路道口是不能超车的，因 此本题正确。',
+            //     url: 'http://images.juheapi.com/jztk/subject4/98.jpg'
+            //   },
+
+            // 获取每个对象里的值
             const {
                 id,
                 question,
@@ -73,10 +77,14 @@ superagent.get('https://v.juhe.cn/jztk/query')
 
             // 更改图片名字
             // http://images.juheapi.com/jztk/subject4/1083.jpg
-            const img_url=url.replace(/http:\/\/images.juheapi.com\/jztk\/subject4\//,'kemu4_')
+            // 'http://images.juheapi.com/jztk/c1c2subject1/100.jpg'
+            // 'http://images.juheapi.com/jztk/c1c2subject1/100.jpg'
+            // 'http://images.juheapi.com/jztk/a1b1subject1/98.jpg'
+
+            const img_url = url.replace(/http:\/\/images.juheapi.com\/jztk\/a2b2subject1\//, 'a2b2_kumu1_')
 
             // 写入数据库的sql
-            let sql=`insert into kemu4( 
+            let sql = `insert into a2b2_kemu1( 
                 id,
                 question,
                 answer,
@@ -99,21 +107,21 @@ superagent.get('https://v.juhe.cn/jztk/query')
                 '${explains}',
                 '${img_url}'
                 )`
-                
-                // 插入数据库
-                // pool.query(sql,(err,result)=>{
-                //     if(err){
-                //         console.log('err',err);
-                //         return
-                //     }
-                //     console.log('数据插入成功',result);
-                // })
+
+            // 插入数据库
+            pool.query(sql,(err,result)=>{
+                if(err){
+                    console.log('err',err);
+                    return
+                }
+                console.log('数据插入成功',result);
+            })
 
 
             // 保持图片到本地
             // superagent.get(url).then(result=>{
 
-            //     fs.writeFile('./src/img/kemu4/'+img_url,result.body,function(err,res){
+            //     fs.writeFile('./src/img/a2b2_kemu1/'+img_url,result.body,function(err,res){
             //         if(err)
             //         console.log("err=",err);
             //         !err
@@ -124,6 +132,25 @@ superagent.get('https://v.juhe.cn/jztk/query')
 
         });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         // 无接口下载数据（html结构）
 
         // 把结构丢入cheerio
@@ -133,7 +160,7 @@ superagent.get('https://v.juhe.cn/jztk/query')
         // 找到想要获取数据的结构（ul li 型），遍历它
 
         // $('.list-content li').each((idx, el) => {
-            // el就是每个li
+        // el就是每个li
         //     const $li = $(el)
 
         // 更改图片名
@@ -153,7 +180,7 @@ superagent.get('https://v.juhe.cn/jztk/query')
         //     ranyoubiaohao: $li.find('.fl:nth-of-type(2)').text(),
         //     quanguoxiaoliang: $li.find('.item-num').text()
         // }
-        
+
         // 生成一个数组
         // const goodslist = []
         // goodslist.push(goods)
