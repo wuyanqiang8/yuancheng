@@ -1,14 +1,337 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>首页</title>
+    <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="style/style.css">
+    <script src="lib/bootstrap/js/bootstrap.js"></script>
+    <script src="lib/jquery-3.1.1.js"></script>
+    <script src="style/style.js"></script>
+
 </head>
+
 <body>
-<h1>首页</h1>
-<a href="page/login.html">登录</a>
-<a href="page/reg.html">注册</a>
+    <div id="dl">
+        <div class="dl">
+            <div>
+                <a href="#" class="logo">
+                    <img src="./img/else/logo.png" alt="">
+                </a>
+            </div>
+
+            <div>
+                <a href="./page/login.html">登录</a>
+                <a href="./page/reg.html">注册</a>
+            </div>
+        </div>
+    </div>
+
+    <div id="tab">
+        <div class="tab">
+            <ul>
+                <li><a href="#">首页</a></li>
+                <li><a href="#">科目一</a></li>
+                <li><a href="#">科目四</a></li>
+                <li><a href="#">模拟考试</a></li>
+                <li><a href="#">买新车</a></li>
+            </ul>
+        </div>
+    </div>
+
+
+    <div id="banner">
+
+        <div class="zhuan">
+
+            <div class="banner">
+                <ul>
+                    <li>
+                        <a href="#">科目一</a>
+                    </li>
+                    <li>
+                        <a href="#">科目二</a>
+                    </li>
+                    <li>
+                        <a href="#">科目三</a>
+                    </li>
+                    <li>
+                        <a href="#">科目四</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
+
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0"
+                        class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                        aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                        aria-label="Slide 3"></button>
+                    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3"
+                        aria-label="Slide 4"></button>
+                </div>
+
+                <div class="carousel-inner">
+
+                    <div class="carousel-item">
+                        <img src="./img/else/home_banner1.png" class="d-block w-100" alt="...">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./img/else/home_banner2.png" class="d-block w-100" alt="...">
+                    </div>
+
+                    <div class="carousel-item">
+                        <img src="./img/else/home_banner3.png" class="d-block w-100" alt="...">
+                    </div>
+
+                    <div class="carousel-item active">
+                        <img src="./img/else/home_banner4.png" class="d-block w-100" alt="...">
+                    </div>
+
+                </div>
+
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                    data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+
+
+
+    </div>
+
+    <div id="lilunkaoshi">
+
+        <div class="lilunkaoshi">
+
+            <div class="biaoti">
+                <h3>北京市2021理论考试</h3>
+            </div>
+
+            <div class="kemu">
+
+                <div class="kemu1">
+                    <h3>科目一交规</h3>
+                    <div class="lianxi">
+                        <div><a href="#">顺序练习</a></div>
+                        <div><a href="#">随机练习</a></div>
+                        <div><a href="#">专项练习</a></div>
+                        <div><a href="#">难题攻克</a></div>
+                    </div>
+                    <div class="moni">
+                        <a href="#">模拟考试</a>
+                    </div>
+                </div>
+
+                <div class="kemu4">
+                    <h3>科目四安全文明驾驶</h3>
+                    <div class="lianxi">
+                        <div><a href="#">顺序练习</a></div>
+                        <div><a href="#">随机练习</a></div>
+                        <div><a href="#">专项练习</a></div>
+                        <div><a href="#">难题攻克</a></div>
+                    </div>
+
+                    <div class="moni">
+                        <a href="#">模拟考试</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <div id="paihang">
+        <div class="paihang">
+            <div class="biaoti">
+                <h3>广州市驾校教练排行</h3>
+            </div>
+
+            <div class="paihangbang">
+                <div class="zonghe">
+                    <h3>综合排行榜</h3>
+                    <ul>
+                    </ul>
+                </div>
+
+                <div class="koubei">
+                    <h3>口碑排行榜</h3>
+                    <ul>
+                    </ul>
+                </div>
+
+                <div class="jianlian">
+                    <h3>教练排行榜</h3>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+
+    <div id="ruzhu">
+        <div class="ruzhu">
+            <img src="./img/else/banner-jxb.png" alt="">
+        </div>
+    </div>
+
+    <div id="tuijian">
+        <div class="tuijian">
+            <div class="biaoti">
+                <h3>北京驾校推荐</h3>
+            </div>
+
+            <div class="tuijian4">
+                <div><a href="#">公交驾校</a></div>
+                <div><a href="#">龙泉驾校</a></div>
+                <div><a href="#">京都府驾校</a></div>
+                <div><a href="#">海淀驾校</a></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chakangenduo">
+        <div class="chakangenduo">
+            <a href="#">查看更多</a>
+        </div>
+
+    </div>
+
+    <div id="liucheng">
+        <div class="liucheng">
+            <div class="biaoti">
+                <h3>学车流程</h3>
+            </div>
+
+            <ul class="lc">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+    </div>
+
+    <div id="rongyu">
+        <div class="rongyu">
+            <div class="biaoti">
+                <h3>宝典荣誉</h3>
+            </div>
+            <div class="wangzhi">
+                <img src="img/else/home-dynamic (1).png" alt="">
+            </div>
+        </div>
+
+    </div>
+    <div id="shouji">
+        <div class="shouji">
+            <img src="img/else/shouji1.png" style="width: 300px;height: 500px;" alt="">
+            <img src="img/else/shouji2.png" style="width: 430px;height: 540px;" alt="">
+            <img src="img/else/shouji3.png" style="width: 265px;height: 428px;" alt="">
+        </div>
+    </div>
+
+    <div id="xiazai">
+        <div class="xiazai">
+            <div class="app" style="border-right: 1px solid #ccc;">
+                <div>
+                    <h4>
+                        驾考宝典APP下载
+                    </h4>
+                    <h5>
+                        考驾照 用宝典
+                    </h5>
+                </div>
+                <img src="img/else/apperweima.png" style="height: 136px;" alt="">
+            </div>
+            <div class="xiaochengxu">
+                <div>
+                    <h4>
+                        驾考宝典微信小程序
+                    </h4>
+                    <h5>
+                        无需下载，驾考做题更方便！
+                    </h5>
+                </div>
+                <img src="img/else/xiaochengxu.png" style="height: 136px;" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div id="lianjie">
+        <div class="lianjie">
+
+            <div class="tab">
+                <div>友情链接</div>
+                <div>热门驾校</div>
+                <div>周边驾校</div>
+                <div>热门推荐</div>
+            </div>
+
+            <div class="neirong">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <div id="end">
+        <div class="end">
+            <div class="zuo">
+                <a href="#">
+                    <img src="img/else/logo_erji.png" style="width: 160px; height: 53.45px;" alt="">
+                </a>
+            </div>
+
+            <div class="guanyu">
+
+                <div class="tab">
+                    <div><a href="#">关于我们</a></div>
+                    <div><a href="#">核心产品</a></div>
+                    <div><a href="#">提交漏洞</a></div>
+                    <div style="border-right:none"><a href="#">隐私协议</a></div>
+                </div>
+
+                <div class="banquan">
+                    地址：武汉市东湖高新区关山大道332号保利国际31层
+                    电话：400-056-1617
+                    鄂公网安备 42018502004455号 鄂ICP备20007713号-3
+                    Copyright © 2021 武汉木仓科技股份有限公司版权所有
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="fanhuidingbu">
+        <a href="#">
+            <img src="img/else/xiazai.png" alt="">
+            <h4>返回顶部</h4>
+        </a>
+    </div>
+
 </body>
+
 </html>
