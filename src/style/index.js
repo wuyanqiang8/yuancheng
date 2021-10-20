@@ -1,4 +1,38 @@
 jQuery($ => {
+
+const dlzc=$('.dlzc')
+const yonghutuichu=$('.yonghutuichu')
+
+const yonghuname=$('.yonghuname')
+const tuichu=$('.tuichu')
+
+yonghutuichu.hide()
+dlzc.show()
+
+const cookie=document.cookie
+const arr = cookie.split('; ')
+
+const data={}
+arr.forEach(item=>{
+    const [key,value]=item.split('=')
+    data[key]=value;
+})
+
+if(data.username&&data.password){
+    yonghutuichu.show()
+    dlzc.hide()
+    yonghuname.text(data.username)
+}
+
+let date=new Date()
+date.setDate(date.getDate()-1)
+
+tuichu.on('click',e=>{
+    document.cookie=`username=x;expires=`+date;
+    document.cookie=`password=x;expires=`+date;
+    location.reload()
+})
+
     const tabs = $('.lianjie>.tab>div')
     const nerrong = $('.lianjie>.neirong>div')
     tabs.first().addClass('active')
@@ -38,8 +72,28 @@ jQuery($ => {
     koubei.html(lis)
     jianlian.html(lis)
 
+
+
+    let liucheng=[
+        "1.找驾校",
+        "2.科目一",
+        "3.科目二",
+        "4.科目三",
+        "5.科目四",
+        "6.拿本"
+    ]
+
+//     let aaa={
+//         aa:"1",
+//         bb:"2",
+//         cc:"3",
+//     }
+
+//    for (const key in aaa) {
+//        console.log(key,aaa[key]);
+//    }
+
     const lc = $('.lc>li')
-    console.log(lc);
     let lcs = ``;
     for (let j = 0; j < 6; j++) {
 
@@ -48,12 +102,9 @@ jQuery($ => {
         <img src="img/else/liucheng${j+1}.png" alt="">
         <img src="img/else/liucheng${(j+1)+(j+1)*10}.png" alt="">
         </div>
-        <h3>流程${j+1}</h3>
+        <h3>${liucheng[j]}</h3>
         </a>`
         lc.eq(j).html(lcs)
     }
-
-
-
 
 })

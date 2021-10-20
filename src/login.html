@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>登录</title>
-    <link rel="stylesheet" href="../lib/bootstrap/css/bootstrap.css">
-    <script src="../lib/jquery-3.1.1.js"></script>
-    <script src="../lib/common.js"></script>
+    <link rel="stylesheet" href="./lib/bootstrap/css/bootstrap.css">
+    <script src="./lib/jquery-3.1.1.js"></script>
+    <script src="./lib/common.js"></script>
+    <script src="./style/login.css"></script>
+    <script src="./style/login.js"></script>
 </head>
 <body>
     <div class="container">
@@ -39,30 +41,5 @@
             </div>
         </div>
 
-    <script>
-        jQuery($=>{
-          const  $username=$('#username')
-            const $password=$('#password')
-            const $btn=$('.btn')
-
-            $btn.on('click',function(){
-                $.ajax({
-                    type:'post',
-                    url:'/login',
-                    data:{
-                        username:$username.val(),
-                        password:$password.val()
-                    }
-                }).then(res=>{
-                    console.log(res);
-                    if(res.code===200){
-                        location.href='../'
-                    }else{
-                        $username.addClass('is-invalid')
-                    }
-                })
-            })
-        })
-    </script>
 </body>
 </html>

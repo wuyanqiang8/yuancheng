@@ -15,7 +15,6 @@ router.post('/', async (req, res) => {
     const sql = `select username from users where username='${username}'and password='${password}'`
     // console.log(spl);
     const data = await db(sql)
-
     if (data.length>0) {
         res.send({
             code: 200,
