@@ -6,6 +6,7 @@ const goodsRouter=require('./goods')
 const userRouter=require('./user')
 const regRouter=require('./reg');
 const loginRouter=require('./login')
+const maicheRouter=require('./maiche')
 
 const { json } = require('express');
 
@@ -18,4 +19,5 @@ router.use('/goods',goodsRouter)
 router.use('/user',userRouter)
 router.use('/reg',regRouter)
 router.use('/login',loginRouter)
+router.use('/maiche',maicheRouter)
 
