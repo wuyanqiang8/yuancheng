@@ -15,6 +15,14 @@ router.use(
     express.json()
 )
 
+
+router.use(function(req,res,next){
+    res.header('Access-Control-Allow-Origin','*');
+    next();
+})
+
+
+
 router.use('/goods',goodsRouter)
 router.use('/user',userRouter)
 router.use('/reg',regRouter)

@@ -144,14 +144,84 @@ body {
 
 #paihang {
     @extend %waiceng-w;
-    @extend %paihang-h;
+    // @extend %paihang-h;
 
     .paihang {
         @extend %banxin-w;
-        @extend %paihang-h;
+        // @extend %paihang-h;
         margin: auto;
-        background-color: rgb(138, 220, 238);
+        background-color: rgb(255, 255, 255);
 
+        // <li>
+        // <p>
+        // <span>${item.id}</span>
+        // <img src="../img/chepaihang/${item.img_url}">
+        // </p>
+
+        // <p>
+        // <span>${item.name}</span>
+        // <span>厂商指导价：${item.price}</span>
+        // <span>全国销量：${item.quanguoxiaoliang}</span>
+        // </p>
+
+        // <p>
+        // <span>${item.zhibao}</span>
+        // <span>${item.huanbao}</span>
+        // <span>${item.youhao}</span>
+        // <span>${item.ranyoubiaohao}</span>
+        // </p>
+
+        // <p>
+        // <a href="#">立即购买</a>
+        // </p>
+       
+        // </li>
+
+
+        .che{
+            // background-color: red;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            li{
+                padding: 10px;
+                border: 1px solid #ccc;
+                border-bottom: none;
+                flex: 1;
+                display: flex;
+                justify-content: space-around;
+                p{
+                    flex: 1;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    // align-items: center;
+
+                    &:nth-of-type(1){
+                        span{
+                            color: #37b5f8;
+                        }
+                    }
+                    &:nth-of-type(4){
+                        a{  
+                            margin: auto;
+                            width: 100px;
+                            height: 50px;
+                            color: #fff !important;
+                            background-color: #37b5f8;
+                            text-align: center;
+                            line-height: 50px;
+                            border-radius: 10px;
+                        }
+                    }
+
+                }
+                
+            }
+
+        }
+
+        
 
 
     }
