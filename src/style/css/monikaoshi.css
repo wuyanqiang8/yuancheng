@@ -1,0 +1,257 @@
+@charset "UTF-8";
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+a {
+  text-decoration: none !important;
+  color: #ccc !important;
+}
+a:hover {
+  color: #37b5f8 !important;
+  text-decoration: underline !important;
+}
+
+li {
+  list-style: none;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+#end, #lianjie, #kaoshi, #tab, #dl {
+  width: 100%;
+}
+
+#end .end, #lianjie .lianjie .neirong, #lianjie .lianjie, #kaoshi .kaoshi, #tab .tab, #dl .dl {
+  width: 1200px;
+  margin: auto;
+}
+
+#kaoshi .kaoshi .tukuang, #kaoshi .kaoshi .timu .tixu div p, #kaoshi .kaoshi .timu .tixu, #kaoshi .kaoshi .timu .kaotiss, #kaoshi .kaoshi .timu .kaoshen img, #kaoshi .kaoshi .timu .kaoshen {
+  border: 1px solid #ccc;
+}
+
+#dl .dl, #dl {
+  height: 147px;
+}
+
+#dl .dl {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#tab .tab, #tab {
+  height: 50px;
+}
+
+#tab {
+  background-color: #37b5f8;
+}
+#tab .tab ul {
+  width: 100%;
+  display: flex;
+}
+#tab .tab ul li {
+  flex: 1;
+  text-align: center;
+  font: 16px/50px "宋体";
+  color: #fff;
+  background-color: #37b5f8;
+}
+#tab .tab ul li:hover {
+  background-color: #258fc7;
+}
+#tab .tab ul li a {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+#kaoshi {
+  height: 3000px;
+}
+
+#kaoshi .kaoshi .tukuang h4, #kaoshi .kaoshi .timu .kaoshen {
+  color: #37b5f8;
+}
+
+#kaoshi .kaoshi .timu {
+  height: 700px;
+  display: flex;
+  margin: 20px 0px;
+}
+#kaoshi .kaoshi .timu .kaoshen {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 0px;
+}
+#kaoshi .kaoshi .timu .kaoshen img {
+  width: 200px;
+  height: 200px;
+  margin: 20px 0px;
+}
+#kaoshi .kaoshi .timu .kaotiss {
+  width: 680px;
+  margin: 0px 20px;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+}
+#kaoshi .kaoshi .timu .kaotiss h3 {
+  color: #37b5f8;
+  margin: 20px 0px;
+}
+#kaoshi .kaoshi .timu .kaotiss .ti {
+  flex: 1;
+}
+#kaoshi .kaoshi .timu .kaotiss .ti .tis {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+#kaoshi .kaoshi .timu .tixu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+#kaoshi .kaoshi .timu .tixu div {
+  flex: 1;
+  display: flex;
+}
+#kaoshi .kaoshi .timu .tixu div p {
+  flex: 1;
+  text-align: center;
+  margin: 0;
+}
+#kaoshi .kaoshi .timu .tixu div p:hover {
+  background-color: #37b5f8;
+  color: #fff;
+}
+#kaoshi .kaoshi .tukuang {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 10px 0px;
+}
+#kaoshi .kaoshi .tukuang h4 {
+  margin: 10px;
+}
+
+#lianjie .lianjie, #lianjie {
+  height: 180px;
+}
+
+#lianjie {
+  background-color: #222;
+}
+#lianjie .lianjie {
+  margin: auto;
+  background-color: #222;
+  display: flex;
+  flex-direction: column;
+}
+#lianjie .lianjie .tab {
+  width: 600px;
+  height: 44px;
+  margin: 10px 0px;
+  color: #666;
+  display: flex;
+  justify-content: space-between;
+  line-height: 44px;
+}
+#lianjie .lianjie .neirong {
+  flex: 1;
+  position: relative;
+}
+#lianjie .lianjie .neirong div {
+  width: 100%;
+  position: absolute;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+#lianjie .lianjie .neirong div a {
+  margin-right: 20px;
+}
+
+.active {
+  color: #fff;
+}
+
+#end .end, #end {
+  height: 150px;
+}
+
+#end {
+  background-color: #222;
+}
+#end .end {
+  margin: auto;
+  display: flex;
+}
+#end .end .zuo {
+  width: 230px;
+  display: flex;
+  justify-content: end;
+  padding: 25px 0px;
+  margin: 10px 34px 10px 0px;
+  border-right: 1px solid #ccc;
+}
+#end .end .zuo a {
+  margin: auto;
+}
+#end .end .guanyu {
+  flex: 1;
+  margin: auto;
+}
+#end .end .guanyu .tab {
+  display: flex;
+}
+#end .end .guanyu .tab div {
+  font-size: 14px;
+  padding: 0px 10px;
+  border-right: 1px solid #fff;
+  color: #fff;
+}
+#end .end .guanyu .tab div:hover {
+  color: #37b5f8;
+}
+#end .end .guanyu .banquan {
+  color: #666;
+}
+
+.fanhuidingbu {
+  position: fixed;
+  right: 10px;
+  bottom: 30px;
+}
+.fanhuidingbu a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 290px;
+}
+.fanhuidingbu a img {
+  background-color: #fff;
+}
+.fanhuidingbu a h4 {
+  width: 100%;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  background-color: #fff;
+}

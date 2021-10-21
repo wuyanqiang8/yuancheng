@@ -9,6 +9,10 @@ const tuichu=$('.tuichu')
 yonghutuichu.hide()
 dlzc.show()
 
+
+
+
+
 const cookie=document.cookie
 const arr = cookie.split('; ')
 
@@ -32,6 +36,10 @@ tuichu.on('click',e=>{
     document.cookie=`password=x;expires=`+date;
     location.reload()
 })
+
+
+
+
 
     const tabs = $('.lianjie>.tab>div')
     const nerrong = $('.lianjie>.neirong>div')
@@ -60,7 +68,7 @@ tuichu.on('click',e=>{
         }
         neirongs.eq(j).html(as)
     }
-
+    
     const zonghe = $('.zonghe>ul')
     const koubei = $('.koubei>ul')
     const jianlian = $('.jianlian>ul')

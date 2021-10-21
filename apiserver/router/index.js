@@ -7,6 +7,7 @@ const userRouter=require('./user')
 const regRouter=require('./reg');
 const loginRouter=require('./login')
 const maicheRouter=require('./maiche')
+const kaoshiRouter=require('./kaoshi')
 
 const { json } = require('express');
 
@@ -21,11 +22,10 @@ router.use(function(req,res,next){
     next();
 })
 
-
-
 router.use('/goods',goodsRouter)
 router.use('/user',userRouter)
 router.use('/reg',regRouter)
 router.use('/login',loginRouter)
 router.use('/maiche',maicheRouter)
+router.use('/kaoshi',kaoshiRouter)
 
