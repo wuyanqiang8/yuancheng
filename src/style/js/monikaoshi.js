@@ -66,6 +66,30 @@ jQuery($ => {
 
 
 
+
+    // 题序
+    const tixu = $('.tixu')
+
+    let tixus20 = '';
+    let tixuzong = '';
+    let shu = 0;
+    for (let i = 1; i <= 20; i++) {
+
+        let tixus5 = ``;
+        for (let j = 1; j <= 5; j++) {
+            shu++;
+
+            tixus5 = tixus5 + `<p>${shu}</p>`
+        }
+
+        tixus20 = `<div>${tixus5}</div>`;
+        tixuzong = tixuzong + tixus20;
+    }
+
+    tixu.html(tixuzong)
+
+
+
     // 渲染页面
     $.ajax({
         url: '/kaoshi',
@@ -217,7 +241,6 @@ jQuery($ => {
         // 把图片渲染到页面
 
         // console.log('imgs=',imgs);
-
         const tu = $('.tu')
         tu.html(imgs)
 
@@ -233,6 +256,27 @@ jQuery($ => {
         $tis.eq(0).show()
         $tis.eq(0).siblings().hide()
 
+
+        // 完成题目的tab切换
+        const $tixu = $('.tixu p')
+        // console.log('$tixu=',$tixu);
+
+        $tixu.on('click',function(){
+
+            const currentTndex=$(this).index()
+            
+            // console.log(currentTndex);
+            // $(this).addClass('active')
+            // $(this).siblings().removeClass('active')
+
+            $imgs.eq(currentTndex).show()
+            $imgs.eq(currentTndex).siblings().hide()
+            $tis.eq(currentTndex).show()
+            $tis.eq(currentTndex).siblings().hide()
+        })
+
+
+
     })
 
 
@@ -240,26 +284,12 @@ jQuery($ => {
 
 
 
-    // 题序
-    const tixu = $('.tixu')
 
-    let tixus20 = '';
-    let tixuzong = '';
-    let shu = 0;
-    for (let i = 1; i <= 20; i++) {
 
-        let tixus5 = ``;
-        for (let j = 1; j <= 5; j++) {
-            shu++;
 
-            tixus5 = tixus5 + `<p>${shu}</p>`
-        }
 
-        tixus20 = `<div>${tixus5}</div>`;
-        tixuzong = tixuzong + tixus20;
-    }
 
-    tixu.html(tixuzong)
+
 
 
 
