@@ -251,18 +251,24 @@ jQuery($ => {
                 </div>
                 </div>
                 
-                <div class="daananniu" >
-                ${daananniu}
-                </div>
-
+                
                 <div class="jieguo">
                 <h4 class="zq">答案正确！</h4>
                 <h4 class="cw">答案错误！</h4>
                 </div>
+                
+                
+                <div class="daananniu" >
+                ${daananniu}
+                </div>
+
+                <div class="shangxiati">
+                <div class="syt${tiid}">上一题</div>
+                <div class="xyt${tiid}">下一题</div>
+                </div>
+
 
                 <div class="dangqianye">0</div>
-
-
                 </div>
                 `
 
@@ -297,6 +303,56 @@ jQuery($ => {
         const $tixu = $('.tabp')
         // console.log(' $tixu=', $tixu.eq(11));
 
+
+
+
+        // 完成上下题
+
+        // 上一页
+        for (let s = 2; s <= 100; s++) {
+
+            let syy=s-2
+            let xyy=s
+
+            const syt = $(`.syt${s}`)
+
+            syt.on("click", e => {
+                console.log(s);
+
+                $imgs.eq(syy).show()
+                $imgs.eq(syy).siblings().hide()
+
+                $tis.eq(syy).show()
+                $tis.eq(syy).siblings().hide()
+            })
+
+        }
+
+        // 下一页
+        for (let s = 1; s <= 99; s++) {
+
+            let syy=s-2
+            let xyy=s
+
+            const xyt = $(`.xyt${s}`)
+
+            xyt.on("click", e => {
+                console.log(s);
+
+                $imgs.eq(xyy).show()
+                $imgs.eq(xyy).siblings().hide()
+
+                $tis.eq(xyy).show()
+                $tis.eq(xyy).siblings().hide()
+            })
+        }
+
+
+
+
+
+
+
         // 完成答题功能
         function datigongneng() {
 
@@ -325,16 +381,13 @@ jQuery($ => {
             let daanmen = ''
 
             // 答题后对应的tab标签变亮
-   
+
             $('.dangqianye').hide()
 
 
 
             daanannius.on('click', function () {
 
-                
-
-                
 
                 // if (liangmie % 2 !== 1) {
                 //     $(this).addClass('activetab')
@@ -345,7 +398,6 @@ jQuery($ => {
 
                 // 当前为第几题
                 let tiindex = this.closest('.tis').className.replace('tis index', '') - 1
-
 
                 // 当前题的选项
                 const xuanxiang = this.innerText
@@ -421,11 +473,7 @@ jQuery($ => {
             })
         }
 
-
         tabqiehuan()
-
-
-
 
 
 

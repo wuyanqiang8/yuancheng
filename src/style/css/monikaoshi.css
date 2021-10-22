@@ -6,7 +6,7 @@
 
 a {
   text-decoration: none !important;
-  color: #ccc !important;
+  color: #666 !important;
 }
 a:hover {
   color: #37b5f8 !important;
@@ -34,7 +34,7 @@ body {
   margin: auto;
 }
 
-#kaoshi .kaoshi .tukuang, #kaoshi .kaoshi .timu .tixu div p, #kaoshi .kaoshi .timu .tixu, #kaoshi .kaoshi .timu .kaotiss .ti .tis .daananniu div, #kaoshi .kaoshi .timu .kaotiss, #kaoshi .kaoshi .timu .kaoshen img, #kaoshi .kaoshi .timu .kaoshen {
+#kaoshi .kaoshi .tukuang, #kaoshi .kaoshi .timu .qiehuan .tixu div p, #kaoshi .kaoshi .timu .qiehuan .tixu, #kaoshi .kaoshi .timu .kaotiss .ti .tis .daananniu div, #kaoshi .kaoshi .timu .kaotiss, #kaoshi .kaoshi .timu .kaoshen img, #kaoshi .kaoshi .timu .kaoshen {
   border: 1px solid #ccc;
 }
 
@@ -63,7 +63,6 @@ body {
   flex: 1;
   text-align: center;
   font: 16px/50px "宋体";
-  color: #fff;
   background-color: #37b5f8;
 }
 #tab .tab ul li:hover {
@@ -73,6 +72,7 @@ body {
   display: block;
   width: 100%;
   height: 100%;
+  color: #fff !important;
 }
 
 #kaoshi {
@@ -84,7 +84,7 @@ body {
 }
 
 #kaoshi .kaoshi .timu {
-  height: 700px;
+  height: 800px;
   display: flex;
   margin: 20px 0px;
 }
@@ -138,6 +138,7 @@ body {
 }
 #kaoshi .kaoshi .timu .kaotiss .ti .tis .tishikuang {
   height: 150px;
+  margin: 20px 0px;
 }
 #kaoshi .kaoshi .timu .kaotiss .ti .tis .jieguo {
   height: 60px;
@@ -150,23 +151,62 @@ body {
 #kaoshi .kaoshi .timu .kaotiss .ti .tis .jieguo h4:nth-of-type(2) {
   color: red;
 }
-#kaoshi .kaoshi .timu .tixu {
+#kaoshi .kaoshi .timu .kaotiss .ti .tis .shangxiati {
+  height: 50px;
+  display: flex;
+  justify-content: end;
+  margin-top: 20px;
+}
+#kaoshi .kaoshi .timu .kaotiss .ti .tis .shangxiati div {
+  width: 100px;
+  margin: 0px 0px 0px 20px;
+  text-align: center;
+  line-height: 50px;
+  border-radius: 5px;
+  background-color: #37b5f8;
+  color: #fff;
+}
+#kaoshi .kaoshi .timu .kaotiss .ti .tis .shangxiati div:hover {
+  background-color: green;
+}
+#kaoshi .kaoshi .timu .qiehuan {
   flex: 1;
   display: flex;
   flex-direction: column;
 }
-#kaoshi .kaoshi .timu .tixu div {
+#kaoshi .kaoshi .timu .qiehuan .tixu {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+#kaoshi .kaoshi .timu .qiehuan .tixu div {
   flex: 1;
   display: flex;
 }
-#kaoshi .kaoshi .timu .tixu div p {
+#kaoshi .kaoshi .timu .qiehuan .tixu div p {
   flex: 1;
   text-align: center;
   margin: 0;
 }
-#kaoshi .kaoshi .timu .tixu div p:hover {
+#kaoshi .kaoshi .timu .qiehuan .tixu div p:hover {
   background-color: #37b5f8;
   color: #fff;
+}
+#kaoshi .kaoshi .timu .qiehuan .jiaojuan {
+  width: 200px;
+  height: 50px;
+  line-height: 50px;
+  background-color: orange;
+  border-radius: 5px;
+  text-align: center;
+  color: #fff;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+#kaoshi .kaoshi .timu .qiehuan .jiaojuan:hover {
+  background-color: green;
 }
 #kaoshi .kaoshi .tukuang {
   display: flex;
