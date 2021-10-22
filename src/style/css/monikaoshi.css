@@ -263,28 +263,14 @@ body {
   color: #666;
 }
 
-.fanhuidingbu {
-  position: fixed;
-  right: 10px;
-  bottom: 30px;
-}
-.fanhuidingbu a {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  width: 290px;
-}
-.fanhuidingbu a img {
-  background-color: #fff;
-}
-.fanhuidingbu a h4 {
-  width: 100%;
-  height: 50px;
-  line-height: 50px;
-  text-align: center;
-  background-color: #fff;
-}
-
 .activetab {
   background-color: orange;
+}
+
+.bred {
+  background-color: red;
+}
+
+.bgreen {
+  background-color: green;
 }
