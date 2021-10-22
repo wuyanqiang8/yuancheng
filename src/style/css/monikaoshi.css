@@ -34,7 +34,7 @@ body {
   margin: auto;
 }
 
-#kaoshi .kaoshi .tukuang, #kaoshi .kaoshi .timu .tixu div p, #kaoshi .kaoshi .timu .tixu, #kaoshi .kaoshi .timu .kaotiss, #kaoshi .kaoshi .timu .kaoshen img, #kaoshi .kaoshi .timu .kaoshen {
+#kaoshi .kaoshi .tukuang, #kaoshi .kaoshi .timu .tixu div p, #kaoshi .kaoshi .timu .tixu, #kaoshi .kaoshi .timu .kaotiss .ti .daananniu div, #kaoshi .kaoshi .timu .kaotiss, #kaoshi .kaoshi .timu .kaoshen img, #kaoshi .kaoshi .timu .kaoshen {
   border: 1px solid #ccc;
 }
 
@@ -120,6 +120,21 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+}
+#kaoshi .kaoshi .timu .kaotiss .ti .daananniu {
+  display: flex;
+  justify-content: end;
+}
+#kaoshi .kaoshi .timu .kaotiss .ti .daananniu div {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  text-align: center;
+  margin: 0px 5px;
+}
+#kaoshi .kaoshi .timu .kaotiss .ti .daananniu div:hover {
+  background-color: #37b5f8;
+  color: #fff;
 }
 #kaoshi .kaoshi .timu .tixu {
   flex: 1;
@@ -254,4 +269,8 @@ body {
   line-height: 50px;
   text-align: center;
   background-color: #fff;
+}
+
+.activetab {
+  background-color: orange;
 }

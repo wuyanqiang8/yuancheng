@@ -79,7 +79,7 @@ jQuery($ => {
         for (let j = 1; j <= 5; j++) {
             shu++;
 
-            tixus5 = tixus5 + `<p>${shu}</p>`
+            tixus5 = tixus5 + `<p class="tabp">${shu}</p>`
         }
 
         tixus20 = `<div>${tixus5}</div>`;
@@ -101,7 +101,9 @@ jQuery($ => {
         let tiid = 0;
 
         res.forEach(e => {
+
             tiid++;
+            // console.log('tiid=',tiid);
             // console.log('e=',e);
 
             // answer: "3"
@@ -147,73 +149,88 @@ jQuery($ => {
             }
 
             // 答案加上abcd
-            let tia=''
-            if(item1){
-                tia='A、'
+            let tia = ''
+            if (item1) {
+                tia = 'A、'
             }
-            let tib=''
-            if(item2){
-                tib='B、'
+            let tib = ''
+            if (item2) {
+                tib = 'B、'
             }
-            let tic=''
-            if(item3){
-                tic='C、'
+            let tic = ''
+            if (item3) {
+                tic = 'C、'
             }
-            let tid=''
-            if(item4){
-                tid='D、'
+            let tid = ''
+            if (item4) {
+                tid = 'D、'
             }
 
             // 答案类型转换 123>abc
-            let daan=''
-            if(answer==1){
-                daan="A"
+            let daan = ''
+            if (answer == 1) {
+                daan = "A"
             }
-            if(answer==2){
-                daan="B"
+            if (answer == 2) {
+                daan = "B"
             }
-            if(answer==3){
-                daan="C"
+            if (answer == 3) {
+                daan = "C"
             }
-            if(answer==4){
-                daan="D"
+            if (answer == 4) {
+                daan = "D"
             }
-            if(answer==7){
-                daan="AB"
+            if (answer == 7) {
+                daan = "AB"
             }
-            if(answer==8){
-                daan="AC"
+            if (answer == 8) {
+                daan = "AC"
             }
-            if(answer==9){
-                daan="AD"
+            if (answer == 9) {
+                daan = "AD"
             }
-            if(answer==10){
-                daan="BC"
+            if (answer == 10) {
+                daan = "BC"
             }
-            if(answer==11){
-                daan="BD"
+            if (answer == 11) {
+                daan = "BD"
             }
-            if(answer==12){
-                daan="CD"
+            if (answer == 12) {
+                daan = "CD"
             }
-            if(answer==13){
-                daan="ABC"
+            if (answer == 13) {
+                daan = "ABC"
             }
-            if(answer==14){
-                daan="ABD"
+            if (answer == 14) {
+                daan = "ABD"
             }
-            if(answer==15){
-                daan="ACD"
+            if (answer == 15) {
+                daan = "ACD"
             }
-            if(answer==16){
-                daan="BCD"
+            if (answer == 16) {
+                daan = "BCD"
             }
-            if(answer==17){
-                daan="ABCD"
+            if (answer == 17) {
+                daan = "ABCD"
             }
 
 
+            let daananniu = ''
+            if (item1 && item2) {
+                daananniu = `
+                    <div>A</div>
+                    <div>B</div>
+                    `
+            }
 
+            if (item3 && item4) {
+                daananniu = `
+                    <div>A</div>
+                    <div>B</div>
+                    <div>C</div>
+                    <div>D</div>
+                    `
+            }
 
 
             // 每个题目
@@ -233,10 +250,16 @@ jQuery($ => {
                 <h4>提示：${explains}</h4>
                 </div>
 
+                <div class="daananniu">
+                ${daananniu}
+                </div>
+
                 </div>
                 `
-        })
 
+
+
+        })
 
         // 把图片渲染到页面
 
@@ -257,23 +280,81 @@ jQuery($ => {
         $tis.eq(0).siblings().hide()
 
 
+
+
+
+
+
+
+
+
+
+
         // 完成题目的tab切换
-        const $tixu = $('.tixu p')
+        const $tixu = $('.tabp')
         // console.log('$tixu=',$tixu);
 
-        $tixu.on('click',function(){
 
-            const currentTndex=$(this).index()
-            
+
+        $tixu.on('click', function () {
+
+            const currentTndex = $(this).text() - 1 * 1
+            // const currentTndex=$(this).index()
+            // console.log(' $(this)=', $(this));
             // console.log(currentTndex);
-            // $(this).addClass('active')
-            // $(this).siblings().removeClass('active')
+
+            // $(this).siblings().removeClass('activetab')
+            // $(this).addClass('activetab')
+
+
 
             $imgs.eq(currentTndex).show()
             $imgs.eq(currentTndex).siblings().hide()
+
             $tis.eq(currentTndex).show()
             $tis.eq(currentTndex).siblings().hide()
         })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
