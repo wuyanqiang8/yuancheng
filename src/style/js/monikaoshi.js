@@ -244,27 +244,36 @@ jQuery($ => {
                 <h4>${tid}${item4}</h4>
                 </div>
                 
-                <div>
+                <div class="tishikuang">
+                 <div class="tishi">
+                 <h4>提示：${explains}</h4>
                 <h4>答案为：<span class="daan">${daan}</span></h4>
-                <h4>提示：${explains}</h4>
+                </div>
+                </div>
+                
+                <div class="daananniu" >
+                ${daananniu}
                 </div>
 
-                <div class="daananniu" value="${daan}" >
-                ${daananniu}
+                <div class="jieguo">
+                <h4 class="zq">答案正确！</h4>
+                <h4 class="cw">答案错误！</h4>
                 </div>
 
                 </div>
                 `
 
-
-
-
-
         })
 
 
+
+
+
+
+
+
         // 第几题 -1= index
-        let dijiti=1000
+        let dijiti = 0
 
         // 把图片渲染到页面
 
@@ -272,7 +281,6 @@ jQuery($ => {
         const tu = $('.tu')
         tu.html(imgs)
 
-        // 把照片渲染到页面
         const $imgs = $('.tu>img')
         $imgs.eq(dijiti).show()
         $imgs.eq(dijiti).siblings().hide()
@@ -282,49 +290,98 @@ jQuery($ => {
         ti.html(tis)
 
         const $tis = $('.ti>div')
+        // console.log($tis);
         $tis.eq(dijiti).show()
         $tis.eq(dijiti).siblings().hide()
 
-
+        // 提示
+        const tishi=$('.tishi')
+        tishi.hide()
+        // console.log(tishi);
 
         // 判断答案是否正确
 
         // 当前题的每个选项
         const daanannius = $('.daananniu>div')
 
+
         // 所有题的答案  一个数组
         const daan = $('.daan')
+
+        // 结果
+        const jieguo=$('.jieguo')
+        // console.log(jieguo[50]);
+
+        jieguo.find('h4:nth-of-type(1)').hide()
+        jieguo.find('h4:nth-of-type(2)').hide()
+
+
+        const zq=$('.zq')
+        const cw=$('.cw')
+        // console.log(zq);
+        // console.log(cw);
+
+
 
         // 第69题的答案
         // console.log(daan[69].innerHTML);
 
 
+        // 设计单点亮，再点灭
+        let liangmie = 1
+        let daanmen=''
+
+
         daanannius.on('click', function () {
+
+            liangmie++;
+
+            $(this).addClass('activetab')
+            $(this).siblings().removeClass('activetab')
+
+            ti.show(tis)
+
+
+            // if (liangmie % 2 !== 1) {
+            //     $(this).addClass('activetab')
+            //     $(this).siblings().removeClass('activetab')
+            // } else {
+            //     $(this).removeClass('activetab')
+            // }
 
             // console.log(this);
             // 当前为第几题
-            let tiindex = this.closest('.tis').className.replace('tis index', '')
+            let tiindex = this.closest('.tis').className.replace('tis index', '')-1
 
             // 当前题的选项
             const xuanxiang = this.innerText
 
             // 当前题答案
-            const daanindex = daan[tiindex-1].innerHTML
+            const daanindex = daan[tiindex].innerHTML
 
             // console.log('当前题的选项:',xuanxiang);
             // console.log('当前题答案:',daanindex);
 
-            if (xuanxiang==daanindex) {
-                console.log('答案正确!');
-            }else{
-                console.log('答案错误!');
+            if (xuanxiang == daanindex) {
+                // console.log('答案正确!');
+                // jieguo.find('h4:nth-of-type(1)').show()
+                // jieguo.find('h4:nth-of-type(2)').hide()
+
+                // tishi.eq(tiindex).show()
+                zq.eq(tiindex).show()
+                cw.eq(tiindex).hide()
+
+            } else {
+                // console.log('答案错误!');
+                // jieguo.find('h4:nth-of-type(2)').show()
+                // jieguo.find('h4:nth-of-type(1)').hide()
+
+                tishi.eq(tiindex).show()
+                zq.eq(tiindex).hide()
+                cw.eq(tiindex).show()
+
             }
-
         })
-
-
-
-
 
 
         // 完成题目的tab切换

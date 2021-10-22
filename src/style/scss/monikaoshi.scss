@@ -205,26 +205,54 @@ body {
                         display: flex;
                         flex-direction: column;
                         justify-content: space-around;
-                    }
-                    .daananniu{
-                        display: flex;
-                        justify-content: end;
 
-                        div{
-                            width: 50px;
-                            height: 50px;
-                            line-height: 50px;
-                            text-align: center;
-                            @extend %border;
-                            margin: 0px 5px ;
-                            &:hover{
-                                background-color: #37b5f8;
-                                color: #fff;
+                        .daananniu {
+                            display: flex;
+                            justify-content: end;
+
+                            div {
+                                width: 50px;
+                                height: 50px;
+                                line-height: 50px;
+                                text-align: center;
+                                @extend %border;
+                                margin: 0px 5px;
+
+                                &:hover {
+                                    background-color: #37b5f8;
+                                    color: #fff;
+                                }
+
                             }
-                            
+
                         }
 
+                        .tishikuang{
+                            height: 150px;
+                        }
+
+
+                        .jieguo {
+                            height: 60px;
+                            display: flex;
+                            line-height: 60px;
+
+                            h4 {
+                                &:nth-of-type(1) {
+                                    color: green;
+                                }
+
+                                &:nth-of-type(2) {
+                                    color: red;
+                                }
+                            }
+                        }
+
+
+
                     }
+
+
                 }
 
 
@@ -420,6 +448,6 @@ body {
 
 }
 
-.activetab{
+.activetab {
     background-color: orange;
 }
