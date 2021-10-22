@@ -232,10 +232,9 @@ jQuery($ => {
                     `
             }
 
-
             // 每个题目
             tis = tis + `
-                <div class="tis">
+                <div class="tis index${tiid}">
                 <div>
                 <h4>【${tixing}】</h4>
                 <h4>第${tiid}题：${question}</h4>
@@ -246,11 +245,11 @@ jQuery($ => {
                 </div>
                 
                 <div>
-                <h4>答案为：${daan}</h4>
+                <h4>答案为：<span class="daan">${daan}</span></h4>
                 <h4>提示：${explains}</h4>
                 </div>
 
-                <div class="daananniu">
+                <div class="daananniu" value="${daan}" >
                 ${daananniu}
                 </div>
 
@@ -259,7 +258,13 @@ jQuery($ => {
 
 
 
+
+
         })
+
+
+        // 第几题 -1= index
+        let dijiti=1000
 
         // 把图片渲染到页面
 
@@ -267,23 +272,55 @@ jQuery($ => {
         const tu = $('.tu')
         tu.html(imgs)
 
+        // 把照片渲染到页面
         const $imgs = $('.tu>img')
-        $imgs.eq(1).show()
-        $imgs.eq(1).siblings().hide()
+        $imgs.eq(dijiti).show()
+        $imgs.eq(dijiti).siblings().hide()
 
         // 把题目渲染到页面
         const ti = $('.ti')
         ti.html(tis)
 
         const $tis = $('.ti>div')
-        $tis.eq(0).show()
-        $tis.eq(0).siblings().hide()
+        $tis.eq(dijiti).show()
+        $tis.eq(dijiti).siblings().hide()
 
 
 
+        // 判断答案是否正确
+
+        // 当前题的每个选项
+        const daanannius = $('.daananniu>div')
+
+        // 所有题的答案  一个数组
+        const daan = $('.daan')
+
+        // 第69题的答案
+        // console.log(daan[69].innerHTML);
 
 
+        daanannius.on('click', function () {
 
+            // console.log(this);
+            // 当前为第几题
+            let tiindex = this.closest('.tis').className.replace('tis index', '')
+
+            // 当前题的选项
+            const xuanxiang = this.innerText
+
+            // 当前题答案
+            const daanindex = daan[tiindex-1].innerHTML
+
+            // console.log('当前题的选项:',xuanxiang);
+            // console.log('当前题答案:',daanindex);
+
+            if (xuanxiang==daanindex) {
+                console.log('答案正确!');
+            }else{
+                console.log('答案错误!');
+            }
+
+        })
 
 
 
@@ -296,7 +333,7 @@ jQuery($ => {
 
 
 
-        $tixu.on('click', function () {
+        $tixu.on('click', function (e) {
 
             const currentTndex = $(this).text() - 1 * 1
             // const currentTndex=$(this).index()
@@ -305,8 +342,6 @@ jQuery($ => {
 
             // $(this).siblings().removeClass('activetab')
             // $(this).addClass('activetab')
-
-
 
             $imgs.eq(currentTndex).show()
             $imgs.eq(currentTndex).siblings().hide()
