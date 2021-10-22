@@ -263,8 +263,8 @@ jQuery($ => {
                 </div>
 
                 <div class="shangxiati">
-                <div class="syt${tiid}">上一题</div>
-                <div class="xyt${tiid}">下一题</div>
+                <button class="syt${tiid}  shangxiatib ">上一题</button>
+                <button class="xyt${tiid}  shangxiatib">下一题</button>
                 </div>
 
 
@@ -273,7 +273,6 @@ jQuery($ => {
                 `
 
         })
-
 
         // 渲染页面
 
@@ -304,48 +303,6 @@ jQuery($ => {
         // console.log(' $tixu=', $tixu.eq(11));
 
 
-
-
-        // 完成上下题
-
-        // 上一页
-        for (let s = 2; s <= 100; s++) {
-
-            let syy=s-2
-            let xyy=s
-
-            const syt = $(`.syt${s}`)
-
-            syt.on("click", e => {
-                console.log(s);
-
-                $imgs.eq(syy).show()
-                $imgs.eq(syy).siblings().hide()
-
-                $tis.eq(syy).show()
-                $tis.eq(syy).siblings().hide()
-            })
-
-        }
-
-        // 下一页
-        for (let s = 1; s <= 99; s++) {
-
-            let syy=s-2
-            let xyy=s
-
-            const xyt = $(`.xyt${s}`)
-
-            xyt.on("click", e => {
-                console.log(s);
-
-                $imgs.eq(xyy).show()
-                $imgs.eq(xyy).siblings().hide()
-
-                $tis.eq(xyy).show()
-                $tis.eq(xyy).siblings().hide()
-            })
-        }
 
 
 
@@ -479,8 +436,69 @@ jQuery($ => {
 
 
 
+        // 完成上下题
+
+        // 上一页
+        for (let s = 2; s <= 100; s++) {
+
+            let syy = s - 2
+            let xyy = s
+
+            const syt = $(`.syt${s}`)
+
+            syt.on("click", e => {
+                console.log(s);
+
+                $imgs.eq(syy).show()
+                $imgs.eq(syy).siblings().hide()
+
+                $tis.eq(syy).show()
+                $tis.eq(syy).siblings().hide()
+            })
+
+        }
+
+        // 下一页
+        for (let s = 1; s <= 99; s++) {
+
+            let syy = s - 2
+            let xyy = s
+
+            const xyt = $(`.xyt${s}`)
+
+            xyt.on("click", e => {
+                console.log(s);
+
+                $imgs.eq(xyy).show()
+                $imgs.eq(xyy).siblings().hide()
+
+                $tis.eq(xyy).show()
+                $tis.eq(xyy).siblings().hide()
+            })
+        }
 
 
+
+        // 完成交卷功能
+        const jiaojuan = $('.jiaojuan')
+
+        jiaojuan.on('click', e => {
+
+            let $fenshu = $('.defen').text()
+
+            let tishi=``
+            if ($fenshu>=90) {
+                tishi=`你的分数为${$fenshu},还行，可以去隔壁买车了！`
+            }
+            else if($fenshu>=80&&$fenshu<90){
+                tishi=`你的分数为${$fenshu},就这？，下次继续努力！`
+            }
+            else if($fenshu<80){
+                tishi=`你的分数为${$fenshu},辣鸡，马路杀手别上路啊！`
+            }
+
+            alert(tishi)
+        })
 
 
 

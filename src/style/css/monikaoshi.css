@@ -84,7 +84,7 @@ body {
 }
 
 #kaoshi .kaoshi .timu {
-  height: 800px;
+  height: 750px;
   display: flex;
   margin: 20px 0px;
 }
@@ -157,7 +157,7 @@ body {
   justify-content: end;
   margin-top: 20px;
 }
-#kaoshi .kaoshi .timu .kaotiss .ti .tis .shangxiati div {
+#kaoshi .kaoshi .timu .kaotiss .ti .tis .shangxiati .shangxiatib {
   width: 100px;
   margin: 0px 0px 0px 20px;
   text-align: center;
@@ -165,8 +165,9 @@ body {
   border-radius: 5px;
   background-color: #37b5f8;
   color: #fff;
+  border-radius: none;
 }
-#kaoshi .kaoshi .timu .kaotiss .ti .tis .shangxiati div:hover {
+#kaoshi .kaoshi .timu .kaotiss .ti .tis .shangxiati .shangxiatib:hover {
   background-color: green;
 }
 #kaoshi .kaoshi .timu .qiehuan {

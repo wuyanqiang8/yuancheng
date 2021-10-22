@@ -156,7 +156,7 @@ body {
         @extend %banxin-w;
 
         .timu {
-            height: 800px;
+            height: 750px;
             display: flex;
             margin: 20px 0px;
 
@@ -255,7 +255,7 @@ body {
                             justify-content: end;
                             margin-top: 20px;
 
-                            div {
+                            .shangxiatib {
                                 width: 100px;
                                 margin: 0px 0px 0px 20px;
                                 text-align: center;
@@ -263,7 +263,7 @@ body {
                                 border-radius: 5px;
                                 background-color: #37b5f8;
                                 color: #fff;
-
+                                border-radius: none;
                                 &:hover {
                                     background-color: green;
                                 }
