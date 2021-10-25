@@ -480,31 +480,61 @@ jQuery($ => {
 
 
         // 完成交卷功能
-        const jiaojuan = $('.jiaojuan')
 
-        jiaojuan.on('click', e => {
+        function jiaojuanhs() {
 
-            let $fenshu = $('.defen').text()
+            const jiaojuan = $('.jiaojuan')
 
-            let tishi=``
-            if ($fenshu>=90) {
-                tishi=`你的分数为${$fenshu},还行，可以去隔壁买车了！`
+            jiaojuan.on('click', e => {
+
+                let $fenshu = $('.defen').text()
+
+                let tishi = ``
+                if ($fenshu >= 90) {
+                    tishi = `你的分数为${$fenshu},也就一般般吧，去去隔壁看看车？`
+                } else if ($fenshu >= 80 && $fenshu < 90) {
+                    tishi = `你的分数为${$fenshu},就这？，下次继续努力！`
+                } else if ($fenshu < 80) {
+                    tishi = `你的分数为${$fenshu},马路杀手，回去路上记得打车！`
+                }
+
+                alert(tishi)
+            })
+
+        }
+
+        jiaojuanhs()
+
+
+
+        // 添加倒计时
+            function daojishi(){
+                // let date = new Date()
+                // let fdate=(date.getMinutes()+45)+date
+                
+                // let www=5
+
+
+                // setInterval(() => {
+                //     let eee=www-1
+                //     $('.shengyushijian').text=eee
+                // }, 5000);
+
+
+
+
+
+                // // console.log(fdate);
+
+
+
+
+
+
+
+
             }
-            else if($fenshu>=80&&$fenshu<90){
-                tishi=`你的分数为${$fenshu},就这？，下次继续努力！`
-            }
-            else if($fenshu<80){
-                tishi=`你的分数为${$fenshu},辣鸡，马路杀手别上路啊！`
-            }
-
-            alert(tishi)
-        })
-
-
-
-
-
-
+            daojishi()
 
 
 

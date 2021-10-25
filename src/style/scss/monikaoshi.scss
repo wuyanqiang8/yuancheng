@@ -264,6 +264,7 @@ body {
                                 background-color: #37b5f8;
                                 color: #fff;
                                 border-radius: none;
+
                                 &:hover {
                                     background-color: green;
                                 }
@@ -284,7 +285,7 @@ body {
                 // @extend %border;
                 display: flex;
                 flex-direction: column;
-                
+
 
                 .tixu {
                     flex: 1;
@@ -325,7 +326,8 @@ body {
                     left: 0;
                     right: 0;
                     margin: auto;
-                    &:hover{
+
+                    &:hover {
                         background-color: green;
                     }
                 }
@@ -373,6 +375,7 @@ body {
 
         @extend %banxin-w;
         @extend %lianjie-h;
+        background-color: #222;
 
         margin: auto;
         background-color: #222;
@@ -426,6 +429,8 @@ body {
     .end {
         @extend %banxin-w;
         @extend %end-h;
+        background-color: #222;
+
         margin: auto;
         display: flex;
 

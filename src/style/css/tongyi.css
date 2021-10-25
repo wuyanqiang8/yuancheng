@@ -126,6 +126,7 @@ body {
 #end .end {
   margin: auto;
   display: flex;
+  background-color: #222;
 }
 #end .end .zuo {
   width: 230px;
